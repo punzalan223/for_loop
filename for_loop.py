@@ -1,35 +1,32 @@
-group = int(input("Enter the members of a group: "))
-guest_age = []
-guest_price = []
-for x in range(group):
-    age = int(input("Enter Guest Age (Blank to End) : "))
-    if age <= 2:
-        a = 0
-        guest_age.append(age)
-        guest_price.append(a)
-    elif age >=3 and age<=12:
-        a = 50
-        guest_age.append(age)
-        guest_price.append(a)
-    elif age >=65:
-        a = 60
-        guest_age.append(age)
-        guest_price.append(a)
+group = int(input("Enter a number of members in a group: "))
+age_price = []
+numbers_group = []
+
+for i in range(group):
+    age = int(input("Enter Guest Age (Black to End) : "))
+    if age<=2:
+        price = 00.00
+        numbers_group.append(age)
+        age_price.append(price)
+    elif age>=3 and age<=12:
+        price = 50.00
+        numbers_group.append(age)
+        age_price.append(price)
+    elif age>=65:
+        price = 60.00
+        numbers_group.append(age)
+        age_price.append(price)
     else:
-        a = 80
-        guest_age.append(age)
-        guest_price.append(a)
+        price = 80.00
+        numbers_group.append(age)
+        age_price.append(price)
 
-print("+-----+-------------+--------+")
-print("| No. |  Guest Age  | Price  |")
-print("+-----+-------------+--------+")
-my_list_length = len(guest_age)
-for i in range(my_list_length):
-    print("| {:^3} |{:^5}yrs old | ₱{:<5.2f} |".format(i,int(guest_age[i]),guest_price[i]))
-print("+-----+-------------+--------+")
-print("The Total cost is ₱",end="")
-print(sum(guest_price))
-
-
-
-
+print("+-------+-------------+---------+")
+print("|--No.--+--Guest Age--+--Price--|")
+print("+-------+-------------+---------+")
+group_length = len(numbers_group)
+for i in range(group_length):
+    print(f"| {i+1:^5} | {numbers_group[i]:^4}yrs old | P{age_price[i]:^6.2f} |")
+print("+-------+-------------+---------+")
+print("The Total Cost is: ",end="")
+print(sum(age_price))
